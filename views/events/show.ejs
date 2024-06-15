@@ -1,0 +1,27 @@
+<!-- views/applications/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= event.name %></title>
+</head>
+<body>
+  
+  <h1><%= event.name %> at <%= event.location %></h1>
+    <p>Date: <%= event.date %></p>
+   <p>RSVP: <%= event.rsvp %></p>
+
+   <form
+    action="/users/<%= user._id %>/events/<%= event._id %>?_method=DELETE"
+    method="POST"
+  >
+
+  <a href="/users/<%= user._id %>/events/<%= event._id %>/edit">
+    Edit this event
+  </a>
+    <button type="submit">Delete this application</button>
+  </form>
+</body>
+</html>

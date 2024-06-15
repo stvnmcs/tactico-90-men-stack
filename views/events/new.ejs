@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New Event</title>
+</head>
+  <body>
+    <h1>Tell Me About The Event</h1>
+
+    <form action="/users/<%= user.userId %>/events" method="POST">
+        <label for="name">Name of Event:</label>
+        <input type="text" name="name" id="name">
+        
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="date">
+        
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location"></textarea>
+        
+        <label for="rsvp">Does it require an RSVP?:</label>
+        <select id="rsvp" name="rsvp">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <button type="submit">Add Event</button>
+      </form>
+
+  </body>
+</html>

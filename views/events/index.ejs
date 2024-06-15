@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactico 90 | Events</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <a href="/users/<%=user._id%>/events/new">Add an Event</a>
+    <ul>
+        
+            <% events.forEach((event)=>{ %>
+              <li>
+                <a href="/users/<%= user._id %>/events/<%= event._id %>">
+                  <%= event.name %> at <%= event.location %>
+              </li>
+            <% }) %>
+          
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit <%= event.name %></title>
+</head>
+<body>
+  
+  <h1>Edit <%= event.name %> at <%= event.location %></h1>
+  <form 
+    action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="location">Location:</label>
+    <input 
+      type="text" 
+      name="location" 
+      id="location" 
+      value="<%= event.location %>"
+    >
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= event.name %>">
+    <label for="rsvp">rsvp:</label>
+    <select id="rsvp" name="rsvp">
+      <option 
+        value="yes" 
+        <%= event.rsvp === "yes" ? "selected" : "" %>
+      >
+        Yes
+      </option>
+      <option 
+        value="yes" 
+        <%= event.rsvp === "yes" ? "selected" : "" %>
+      >
+        No
+      </option>
+      <option 
+        value="no" 
+        <%= event.rsvp === "no" ? "selected" : "" %> 
+      >
+      </option>
+    </select>
+    <button type="submit">Update Application</button>
+  </form>
+</body>
+</html>

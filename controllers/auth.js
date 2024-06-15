@@ -32,7 +32,9 @@ router.get("/sign-in", (req, res) => {
 
 router.post("/sign-in", async (req, res) => {
  const userInDatabase = await User.findOne({ username: req.body.username });
+console.log(userInDatabase
 
+)
   if (!userInDatabase) {
   return res.send("Login failed. Please try again.");
  }
@@ -46,6 +48,7 @@ router.post("/sign-in", async (req, res) => {
 
   req.session.user = {
     username: userInDatabase.username,
+    userId: userInDatabase._id,
   };
 
   res.redirect("/");
