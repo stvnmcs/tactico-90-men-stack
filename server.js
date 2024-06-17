@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
